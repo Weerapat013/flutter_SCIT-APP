@@ -4,7 +4,10 @@ import 'package:flutter_themedemo/color.dart';
 class AppBarMain extends StatefulWidget implements PreferredSizeWidget {
   const AppBarMain({
     super.key,
+    required this.userData,
   });
+
+  final Map userData;
 
   @override
   State<AppBarMain> createState() => _AppBarMainState();
@@ -34,10 +37,10 @@ class _AppBarMainState extends State<AppBarMain> {
       ),
       titleTextStyle: Theme.of(context).textTheme.headlineSmall,
       centerTitle: false,
-      title: const Text(
-        // 'Home : ${userData["user"]}',
-        'Home',
-        style: TextStyle(color: purplePrimary),
+      title: Text(
+        'Home : ${widget.userData["user"]}',
+        //'Home',
+        style: const TextStyle(color: purplePrimary),
       ),
       actions: [
         Padding(

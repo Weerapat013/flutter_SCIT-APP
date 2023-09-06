@@ -13,14 +13,15 @@ class MainNews extends StatefulWidget {
 class _MainNewsState extends State<MainNews> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final Map userData = ModalRoute.of(context)!.settings.arguments as Map;
+    return Scaffold(
       backgroundColor: whitePure,
-      appBar: AppBarMain(),
-      drawer: MainDrawer(),
+      appBar: AppBarMain(userData: userData),
+      drawer: MainDrawer(userData: userData),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Text('data'),
+            Text('data : ${userData["user"]}'),
           ],
         ),
       ),

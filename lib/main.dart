@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_themedemo/pages/curriculum.dart';
 import 'package:flutter_themedemo/pages/hello.dart';
 import 'package:flutter_themedemo/pages/home.dart';
 import 'package:flutter_themedemo/pages/login.dart';
@@ -19,13 +20,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: scitTheme(),
-      initialRoute: '/hello',
+      initialRoute: '/curriculum',
       routes: {
         '/hello': (context) => const Hello(),
         '/register': (context) => const Register(),
         '/login':(context) => const Login(),
         '/news':(context) => const Home(),
         '/mainNews':(context) => const MainNews(),
+        '/curriculum':(context) => const Curriculum(),
       },
     );
   }

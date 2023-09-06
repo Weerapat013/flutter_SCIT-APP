@@ -5,12 +5,14 @@ class DrawerMenu extends StatelessWidget {
   final IconData icon;
   final String menuName;
   final String route;
+  final Map data;
   
   const DrawerMenu({
     super.key, 
     required this.icon, 
     required this.menuName, 
     required this.route,
+    required this.data,
   });
 
   @override
@@ -31,7 +33,8 @@ class DrawerMenu extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(
           context, 
-          route
+          route,
+          arguments: data,
         );
       },
     );

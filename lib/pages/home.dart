@@ -11,16 +11,16 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Map userData = {};
+  //Map userData = {};
   TextEditingController search = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    //userData = ModalRoute.of(context)!.settings.arguments as Map;
+    final Map userData = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      appBar: const AppBarMain(),
-      drawer: const MainDrawer(),
+      appBar: AppBarMain(userData: userData),
+      drawer: MainDrawer(userData: userData),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
